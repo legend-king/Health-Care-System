@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/rcPatDocChatReceive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/datebg"
+        android:backgroundTint="#C1CAB6"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/rcPatDocChatSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:backgroundTint="#E2D9EC"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="end"
+        android:background="@drawable/datebg"
+        android:text="" />
+</LinearLayout>

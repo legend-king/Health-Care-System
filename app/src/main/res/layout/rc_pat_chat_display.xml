@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        app:cardElevation="15dp"
+        app:strokeWidth="3dp"
+        app:strokeColor="#DAA914"
+        android:outlineAmbientShadowColor="#AAA362"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/rcPatChatDispProf"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/doctor"
+                app:civ_border_color="#3f51b5"
+                app:civ_border_width="4dp"
+                app:civ_shadow="true"
+                android:layout_margin="10dp"
+                app:civ_shadow_color="#3f51b5"
+                app:civ_shadow_radius="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rcPatChatDispName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="User Name" />
+
+                <TextView
+                    android:id="@+id/rcPatChatDispSpecialist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="General Surgeon" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/drawable/bc.xml" value="0.2484375" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/drawable/datebg.xml" value="0.24461538461538462" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/drawable/logout.xml" value="0.24461538461538462" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_doctor.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_doctor_login.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_doctor_registration.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_patient.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_patient_registration.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/doctor_nav_header.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_doctor_chat.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_doctor_profile.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_pat_doc_chat.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_patient_book_ambulance.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_patient_chat.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_patient_physical_activity.xml" value="0.2287179487179487" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_patient_profile.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_patient_search_doc.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/patient_nav_header.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/rc_doc_chat_disp.xml" value="0.22314814814814815" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/rc_pat_chat_display.xml" value="0.2287179487179487" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/rc_pat_doc_chat.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/rc_patient_physical_activity.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/rc_patient_search_doctor.xml" value="0.1685185185185185" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/menu/doctor_navigation_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/menu/patient_navigation_menu.xml" value="0.23229166666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

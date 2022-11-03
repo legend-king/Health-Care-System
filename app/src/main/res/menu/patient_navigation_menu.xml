@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/patProfile"
+        android:icon="@drawable/profile"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/patSearch"
+        android:icon="@drawable/search"
+        android:title="Search Doctor" />
+
+    <item
+        android:id="@+id/patChats"
+        android:icon="@drawable/chat"
+        android:title="Chats" />
+
+    <item
+        android:id="@+id/patAmbulance"
+        android:icon="@drawable/ambulance"
+        android:title="Book an ambulance" />
+
+    <item
+        android:id="@+id/patPhysicalActivity"
+        android:icon="@drawable/exercise"
+        android:title="Physical Activity"/>
+
+    <item
+        android:id="@+id/patLogout"
+        android:icon="@drawable/logout"
+        android:title="Logout" />
+
+</menu>
