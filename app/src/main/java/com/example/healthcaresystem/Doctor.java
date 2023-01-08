@@ -19,6 +19,8 @@ import com.example.healthcaresystem.Fragments.DoctorProfileFragment;
 import com.example.healthcaresystem.databinding.ActivityDoctorBinding;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Stack;
+
 public class Doctor extends AppCompatActivity {
 
     ActivityDoctorBinding binding;
@@ -32,6 +34,7 @@ public class Doctor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityDoctorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         try {
 
@@ -48,7 +51,8 @@ public class Doctor extends AppCompatActivity {
             fragmentManager = getSupportFragmentManager();
 
 
-            actionBarDrawerToggle = new ActionBarDrawerToggle(this, binding.myDrawerLayout,
+            actionBarDrawerToggle = new ActionBarDrawerToggle(this,
+                    binding.myDrawerLayout,
                     R.string.nav_open, R.string.nav_close);
 
             binding.myDrawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -56,16 +60,20 @@ public class Doctor extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             Fragment fragment = new DoctorProfileFragment();
-            fragmentManager.beginTransaction().replace(binding.docFragment.getId(), fragment).commit();
+            fragmentManager.beginTransaction().replace(binding.docFragment.getId(),
+                    fragment, "profile").commit();
         }catch(Exception e){
             Log.e("error", e.toString());
         }
 
 
-        binding.nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        binding.nav.setNavigationItemSelectedListener(new NavigationView.
+                OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment = null;
+                String tag = null;
+                boolean flag=false;
                 switch (item.getItemId()){
                     case R.id.docLogout:
                         db.deleteData();
@@ -75,12 +83,22 @@ public class Doctor extends AppCompatActivity {
                         break;
                     case R.id.docChats:
                         fragment = new DoctorChatDisplayFragment();
+                        tag = "chatDisplay";
                         break;
                     default:
                         fragment = new DoctorProfileFragment();
+                        tag = "profile";
                 }
                 if (fragment!=null){
-                    fragmentManager.beginTransaction().replace(R.id.docFragment, fragment).commit();
+                    if (flag){
+                        fragmentManager.beginTransaction().replace(binding.docFragment.getId(),
+                                fragment, tag).commit();
+                    }
+                    else{
+                        fragmentManager.beginTransaction().replace(binding.docFragment.getId(),
+                                fragment, tag).addToBackStack(tag).commit();
+                    }
+
                 }
 
                 binding.myDrawerLayout.closeDrawer(GravityCompat.START);
@@ -98,4 +116,14 @@ public class Doctor extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+
+    }
 }

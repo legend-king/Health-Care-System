@@ -21,6 +21,24 @@
     <string name="weight">Weight</string>
     <string name="dob">Date of Birth</string>
     <string name="age">Age</string>
+    <string name="prescribeMedicine">Prescribe Medicine</string>
+    <string name="prescription">Prescription</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="advice">Advice</string>
+    <string name="medicineName">Medicine Name</string>
+    <string name="type">Type</string>
+    <string name="beforeBreakfast">Before Break Fast</string>
+    <string name="afterBreakfast">After Break Fast</string>
+    <string name="beforeLunch">Before Lunch</string>
+    <string name="afterLunch">After Lunch</string>
+    <string name="beforeDinner">Before Dinner</string>
+    <string name="afterDinner">After Dinner</string>
+    <string name="evening">Evening</string>
+    <string name="noOfTablets">No of Tablets</string>
+    <string name="noOfCapsules">No of Capsules</string>
+    <string name="amount">Amount</string>
+    <string name="duration">Duration (No of Days)</string>
+    <string name="addMedicine">Add Medicine</string>
 
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>

@@ -16,7 +16,7 @@ import java.net.URL;
 
 public class ApiClasses {
     static String url = "http://192.168.1.30:8000/api/";
-//    static String url = "http://172.16.52.68:8000/api/";
+//    static String url = "http://172.16.9.149:8000/api/";
 
     public static class Specilaist extends AsyncTask<Void, Void, String> {
 

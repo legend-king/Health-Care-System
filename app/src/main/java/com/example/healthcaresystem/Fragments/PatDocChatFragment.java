@@ -61,6 +61,17 @@ public class PatDocChatFragment extends Fragment {
         type = cursor.getInt(2);
         binding.receiver.setText(receiverName);
 
+        if (type==0){
+            binding.precribeMedicine.setVisibility(View.GONE);
+        }
+
+        binding.precribeMedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

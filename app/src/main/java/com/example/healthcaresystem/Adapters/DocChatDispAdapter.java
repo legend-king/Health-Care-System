@@ -84,7 +84,7 @@ public class DocChatDispAdapter  extends RecyclerView.Adapter<DocChatDispAdapter
             int position = this.getAdapterPosition();
             PatChatDispModel x = data.get(position);
             fragmentManager.beginTransaction().replace(R.id.docFragment, new
-                    PatDocChatFragment(x.getUsername(), x.getName())).commit();
+                    PatDocChatFragment(x.getUsername(), x.getName()), "chat").addToBackStack("chat").commit();
         }
     }
 }

@@ -26,7 +26,6 @@ public class Login extends AppCompatActivity {
 
         Intent intent = getIntent();
         type = intent.getIntExtra("type", 0);
-
         binding.login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

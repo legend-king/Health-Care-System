@@ -13,9 +13,12 @@
         android:theme="@style/Theme.HealthCareSystem"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Patient"
-            android:windowSoftInputMode = "stateAlwaysVisible"
+            android:name=".PrescribeMedicineActivity"
             android:exported="true" />
+        <activity
+            android:name=".Patient"
+            android:exported="true"
+            android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
             android:name=".PatientRegistration"
             android:exported="true" />

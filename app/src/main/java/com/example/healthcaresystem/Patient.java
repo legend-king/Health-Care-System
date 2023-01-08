@@ -55,7 +55,8 @@ public class Patient extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             Fragment fragment = new PatientProfileFragment();
-            fragmentManager.beginTransaction().replace(binding.patFragment.getId(), fragment).commit();
+            fragmentManager.beginTransaction().replace(binding.patFragment.getId(), fragment,
+                    "profile").commit();
         }catch(Exception e){
             Log.e("error", e.toString());
         }
@@ -65,6 +66,7 @@ public class Patient extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment = null;
+                String tag="";
                 switch (item.getItemId()){
                     case R.id.patLogout:
                         db.deleteData();
@@ -74,21 +76,27 @@ public class Patient extends AppCompatActivity {
                         break;
                     case R.id.patChats:
                         fragment = new PatientChatDisplayFragment();
+                        tag = "chatDisplay";
                         break;
                     case R.id.patSearch:
                         fragment = new PatientSearchDocFragment();
+                        tag = "doctorSearch";
                         break;
                     case R.id.patAmbulance:
                         fragment = new PatientBookAmbulanceFragment();
+                        tag = "ambulance";
                         break;
                     case R.id.patPhysicalActivity:
                         fragment = new PatientPhysicalActivityFragment();
+                        tag = "physicalActivity";
                         break;
                     default:
                         fragment = new PatientProfileFragment();
+                        tag = "profile";
                 }
                 if (fragment!=null){
-                    fragmentManager.beginTransaction().replace(R.id.patFragment, fragment).commit();
+                    fragmentManager.beginTransaction().replace(R.id.patFragment, fragment, tag)
+                            .addToBackStack(tag).commit();
                 }
                 binding.myDrawerLayout.closeDrawer(GravityCompat.START);
                 return false;
@@ -103,5 +111,16 @@ public class Patient extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+
     }
 }

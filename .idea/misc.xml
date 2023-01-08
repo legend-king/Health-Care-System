@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/drawable/bc.xml" value="0.2484375" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/drawable/datebg.xml" value="0.24461538461538462" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/drawable/ic_launcher_background.xml" value="0.225" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/drawable/logout.xml" value="0.24461538461538462" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_doctor.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_doctor_login.xml" value="0.2" />
@@ -13,6 +14,7 @@
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_patient.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_patient_registration.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/activity_prescribe_medicine.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/doctor_nav_header.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_doctor_chat.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects1/HealthCareSystem/app/src/main/res/layout/fragment_doctor_profile.xml" value="0.2" />
