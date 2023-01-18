@@ -56,7 +56,8 @@ public class PatientSearchDoctorAdapter extends RecyclerView.Adapter<PatientSear
             @Override
             public void onClick(View view) {
                 fragmentManager.beginTransaction().replace(R.id.patFragment,
-                        new DoctorProfileFragment(x.getUsername())).commit();
+                        new DoctorProfileFragment(x.getUsername()), "doctorProfile").
+                        addToBackStack("doctorProfile").commit();
             }
         });
     }
@@ -85,7 +86,8 @@ public class PatientSearchDoctorAdapter extends RecyclerView.Adapter<PatientSear
             int position = this.getAdapterPosition();
             SearchDoctorModel x = data.get(position);
             fragmentManager.beginTransaction().replace(R.id.patFragment, new
-                    PatDocChatFragment(x.getUsername(), x.getName())).commit();
+                    PatDocChatFragment(x.getUsername(), x.getName()), "chat")
+                    .addToBackStack("chat").commit();
         }
     }
 }

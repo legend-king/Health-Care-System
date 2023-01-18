@@ -1,6 +1,7 @@
 package com.example.healthcaresystem.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -19,6 +20,7 @@ import com.example.healthcaresystem.ApiClasses;
 import com.example.healthcaresystem.DBHelper;
 import com.example.healthcaresystem.Models.ChatModel;
 import com.example.healthcaresystem.Models.PhysicalActivityModel;
+import com.example.healthcaresystem.PrescribeMedicineActivity;
 import com.example.healthcaresystem.R;
 import com.example.healthcaresystem.databinding.FragmentPatDocChatBinding;
 
@@ -68,7 +70,10 @@ public class PatDocChatFragment extends Fragment {
         binding.precribeMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getActivity(), PrescribeMedicineActivity.class);
+                intent.putExtra("prescribedBy", sender);
+                intent.putExtra("prescribedTo", receiver);
+                startActivity(intent);
             }
         });
 

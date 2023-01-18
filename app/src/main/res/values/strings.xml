@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Health Care System</string>
+    <string name="url">http://192.168.1.30:8000/api/</string>
     <string name="doctor">Doctor</string>
     <string name="patient">Patient</string>
     <string name="driver">Driver</string>
@@ -26,7 +27,7 @@
     <string name="diagnosis">Diagnosis</string>
     <string name="advice">Advice</string>
     <string name="medicineName">Medicine Name</string>
-    <string name="type">Type</string>
+    <string name="medicineType">Medicine Type : </string>
     <string name="beforeBreakfast">Before Break Fast</string>
     <string name="afterBreakfast">After Break Fast</string>
     <string name="beforeLunch">Before Lunch</string>
@@ -36,9 +37,11 @@
     <string name="evening">Evening</string>
     <string name="noOfTablets">No of Tablets</string>
     <string name="noOfCapsules">No of Capsules</string>
-    <string name="amount">Amount</string>
+    <string name="syrupAmount">Syrup Amount (ml)</string>
     <string name="duration">Duration (No of Days)</string>
     <string name="addMedicine">Add Medicine</string>
+    <string name="amount">Amount</string>
+
 
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
