@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey" />
+
+    <TextView
+        android:id="@+id/dDocMedicineNumber"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Medicine Number : " />
+
+    <TextView
+        android:id="@+id/dDocMedicinetype"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Medicine Name : " />
+
+    <TextView
+        android:id="@+id/dDocMedicineName"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Medicine Type : " />
+
+    <TextView
+        android:id="@+id/dDocMedicineTablets"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Tablets : " />
+
+    <TextView
+        android:id="@+id/dDocMedicineDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:text="Duration : " />
+
+    <TextView
+        android:id="@+id/dDocMedicineBeforeBreakFast"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Before BreakFast :  " />
+
+    <TextView
+        android:id="@+id/dDocMedicineAfterBreakFast"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="After BreakFast : " />
+
+    <TextView
+        android:id="@+id/dDocMedicineBeforeLunch"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Before Lunch :  " />
+
+    <TextView
+        android:id="@+id/dDocMedicineAfterLunch"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="After Lunch : " />
+
+    <TextView
+        android:id="@+id/dDocMedicineBeforeDinner"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Before Dinner :  " />
+
+    <TextView
+        android:id="@+id/dDocMedicineAfterDinner"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="After Dinner : " />
+
+    <TextView
+        android:id="@+id/dDocMedicineEvening"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Evening :  " />
+
+    
+
+</LinearLayout>

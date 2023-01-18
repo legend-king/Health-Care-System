@@ -460,6 +460,9 @@ public class PrescribeMedicineActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(JSONObject response) {
                             Log.e("Api", "result" + response);
+                            Toast.makeText(getApplicationContext(), "Prescribed Medicine",
+                                    Toast.LENGTH_SHORT).show();
+                            finish();
                         }
 
                         @Override
@@ -467,9 +470,6 @@ public class PrescribeMedicineActivity extends AppCompatActivity {
                             Log.e("error", anError.toString());
                         }
                     });
-                    Log.e("Error", diagnosis);
-                    Log.e("Error", advice);
-                    Log.e("Error", data.toString());
                 }
 
 

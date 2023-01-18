@@ -19,6 +19,11 @@
         android:title="Chats" />
 
     <item
+        android:id="@+id/patPrescribedMedicine"
+        android:icon="@drawable/ic_baseline_medication_liquid_24"
+        android:title="Prescribed Medicines" />
+
+    <item
         android:id="@+id/patAmbulance"
         android:icon="@drawable/ambulance"
         android:title="Book an ambulance" />

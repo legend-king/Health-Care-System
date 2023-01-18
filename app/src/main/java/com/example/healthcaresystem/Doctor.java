@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.healthcaresystem.Fragments.DoctorChatDisplayFragment;
+import com.example.healthcaresystem.Fragments.DoctorPrescribedMedicineFragment;
 import com.example.healthcaresystem.Fragments.DoctorProfileFragment;
 import com.example.healthcaresystem.databinding.ActivityDoctorBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -84,6 +85,10 @@ public class Doctor extends AppCompatActivity {
                     case R.id.docChats:
                         fragment = new DoctorChatDisplayFragment();
                         tag = "chatDisplay";
+                        break;
+                    case R.id.docPrescribedMedicine:
+                        fragment = new DoctorPrescribedMedicineFragment();
+                        tag = "prescribedMedicine";
                         break;
                     default:
                         fragment = new DoctorProfileFragment();

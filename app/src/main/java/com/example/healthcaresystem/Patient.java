@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import com.example.healthcaresystem.Fragments.PatientBookAmbulanceFragment;
 import com.example.healthcaresystem.Fragments.PatientChatDisplayFragment;
 import com.example.healthcaresystem.Fragments.PatientPhysicalActivityFragment;
+import com.example.healthcaresystem.Fragments.PatientPrescribedMedicineFragment;
 import com.example.healthcaresystem.Fragments.PatientProfileFragment;
 import com.example.healthcaresystem.Fragments.PatientSearchDocFragment;
 import com.example.healthcaresystem.databinding.ActivityPatientBinding;
@@ -77,6 +78,10 @@ public class Patient extends AppCompatActivity {
                     case R.id.patChats:
                         fragment = new PatientChatDisplayFragment();
                         tag = "chatDisplay";
+                        break;
+                    case R.id.patPrescribedMedicine:
+                        fragment = new PatientPrescribedMedicineFragment();
+                        tag = "prescribedMedicine";
                         break;
                     case R.id.patSearch:
                         fragment = new PatientSearchDocFragment();

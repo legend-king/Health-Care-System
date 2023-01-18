@@ -14,6 +14,11 @@
         android:title="Chats" />
 
     <item
+        android:id="@+id/docPrescribedMedicine"
+        android:icon="@drawable/ic_baseline_medication_liquid_24"
+        android:title="Prescribed Medicines" />
+
+    <item
         android:id="@+id/docLogout"
         android:icon="@drawable/logout"
         android:title="Logout" />

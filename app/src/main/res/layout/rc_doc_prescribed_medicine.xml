@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        app:cardElevation="15dp"
+        app:strokeWidth="3dp"
+        app:strokeColor="#DAA914"
+        android:outlineAmbientShadowColor="#AAA362"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/rcDocPresDiagnosis"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="Diagnosis" />
+
+            <TextView
+                android:id="@+id/rcDocPresPrescribedTo"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="Prescribed To : " />
+
+            <TextView
+                android:id="@+id/rcDocPresPrescribedOn"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:text="Prescribed On : " />
+
+            <TextView
+                android:id="@+id/rcDocPresAdvice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="Advice : " />
+
+            <LinearLayout
+                android:id="@+id/rcDocPresDynamicAddMedicineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                ></LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/rcDocPresView"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bc"
+                android:backgroundTint="@color/orange"
+                android:text="@string/viewDetails"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"/>
+
+
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

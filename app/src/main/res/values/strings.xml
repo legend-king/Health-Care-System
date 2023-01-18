@@ -41,6 +41,7 @@
     <string name="duration">Duration (No of Days)</string>
     <string name="addMedicine">Add Medicine</string>
     <string name="amount">Amount</string>
+    <string name="viewDetails">View Details</string>
 
 
     <string name="nav_open">Open</string>
