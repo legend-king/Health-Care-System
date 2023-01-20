@@ -180,7 +180,7 @@ public class PatientRegistration extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Registration Successful",
                                             Toast.LENGTH_SHORT).show();
                                     db.deleteData();
-                                    db.insertData(userName, password, 1, mobile, email);
+                                    db.insertData(userName, password, 0, mobile, email);
                                     Intent intent = new Intent(PatientRegistration.this,
                                             Patient.class);
                                     startActivity(intent);

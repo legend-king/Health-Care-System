@@ -46,7 +46,12 @@ public class DocPrescribedMedicineAdapter extends RecyclerView.Adapter<DocPrescr
         try{
             JSONObject x = data.getJSONObject(position);
             holder.diagnosis.setText(x.getString("diagnosis"));
-            holder.advice.setText("Advice : " + x.getString("advice"));
+            if (x.getString("advice").equals("")){
+                holder.advice.setVisibility(View.GONE);
+            }
+            else{
+                holder.advice.setText("Advice : " + x.getString("advice"));
+            }
             if (type==1){
                 holder.prescribedTo.setText("Prescribed To : "+x.getString("prescribed_to"));
             }else{

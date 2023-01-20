@@ -441,9 +441,10 @@ public class PrescribeMedicineActivity extends AppCompatActivity {
                     flag=false;
                     binding.diagnosisET.setError("Field cannot be empty");
                 }
-
                 if (flag){
                     String url = getString(R.string.url);
+                    Log.e("Error", "Entered");
+
                     AndroidNetworking.post(url+"prescribeMedicine")
                             .addJSONArrayBody(data)
                             .addQueryParameter("diagnosis", diagnosis)
@@ -470,8 +471,8 @@ public class PrescribeMedicineActivity extends AppCompatActivity {
                             Log.e("error", anError.toString());
                         }
                     });
+                    Log.e("Error", "Outside Exit");
                 }
-
 
             }
         });

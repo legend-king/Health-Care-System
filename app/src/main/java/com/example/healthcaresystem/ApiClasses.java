@@ -4,6 +4,12 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.androidnetworking.interfaces.UploadProgressListener;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -16,7 +22,7 @@ import java.net.URL;
 
 public class ApiClasses {
     static String url = "http://192.168.1.30:8000/api/";
-//    static String url = "http://172.16.9.149:8000/api/";
+//    static String url = "http://172.16.9.232:8000/api/";
 
     public static class Specilaist extends AsyncTask<Void, Void, String> {
 
@@ -703,6 +709,41 @@ public class ApiClasses {
             return new JSONArray(resultJson);
         }
     }
+
+//    static class Test{
+//        JSONObject test() {
+//            final JSONObject[] jsonObject = {null};
+//            AndroidNetworking.post(url + "prescribeMedicine")
+//                    .addJSONArrayBody(data)
+//                    .addQueryParameter("diagnosis", diagnosis)
+//                    .addQueryParameter("advice", advice)
+//                    .addQueryParameter("prescribedBy", prescribedBy)
+//                    .addQueryParameter("prescribedTo", prescribedTo)
+//                    .setPriority(Priority.HIGH)
+//                    .build()
+//                    .setUploadProgressListener(new UploadProgressListener() {
+//                        @Override
+//                        public void onProgress(long bytesUploaded, long totalBytes) {
+//                        }
+//                    }).getAsJSONObject(new JSONObjectRequestListener() {
+//                @Override
+//                public void onResponse(JSONObject response) {
+//                    Log.e("Api", "result" + response);
+//                    jsonObject[0] =response;
+//                    PrescribeMedicineActivity prescribeMedicineActivity
+//                    Toast.makeText(getApplicationContext(), "Prescribed Medicine",
+//                            Toast.LENGTH_SHORT).show();
+//                    finish();
+//                }
+//
+//                @Override
+//                public void onError(ANError anError) {
+//                    Log.e("error", anError.toString());
+//                }
+//            });
+//            return jsonObject[0];
+//        }
+//    }
 
 }
 
