@@ -54,9 +54,18 @@ public class DocPrescribedMedicineAdapter extends RecyclerView.Adapter<DocPrescr
             }
             if (type==1){
                 holder.prescribedTo.setText("Prescribed To : "+x.getString("prescribed_to"));
+                holder.orderNow.setVisibility(View.GONE);
             }else{
                 holder.prescribedTo.setText("Prescribed By : "+x.getString("prescribed_by"));
+                holder.orderNow.setVisibility(View.GONE);
             }
+
+            holder.orderNow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
 
             holder.prescribedOn.setText("Prescribed On : "+x.getString("date"));
 
@@ -239,7 +248,7 @@ public class DocPrescribedMedicineAdapter extends RecyclerView.Adapter<DocPrescr
 
         public TextView diagnosis, advice, prescribedTo, prescribedOn;
         public LinearLayout dynamicAddMedicineLayout;
-        public Button view;
+        public Button view, orderNow;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -252,6 +261,7 @@ public class DocPrescribedMedicineAdapter extends RecyclerView.Adapter<DocPrescr
             prescribedOn = itemView.findViewById(R.id.rcDocPresPrescribedOn);
             dynamicAddMedicineLayout = itemView.findViewById(R.id.rcDocPresDynamicAddMedicineLayout);
             view = itemView.findViewById(R.id.rcDocPresView);
+            orderNow = itemView.findViewById(R.id.rcDocPresOrderNow);
         }
 
         @Override

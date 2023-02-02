@@ -63,6 +63,7 @@ public class DoctorProfileFragment extends Fragment {
                 binding.email.setText(jsonObject.getString("email"));
                 binding.mobile.setText(jsonObject.getString("mobile"));
                 binding.specialist.setText(jsonObject.getString("specialist"));
+                binding.consultationCharge.setText(jsonObject.getString("consultation_charge"));
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.e("error", e.toString());

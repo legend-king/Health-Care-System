@@ -3,6 +3,8 @@
     package="com.example.healthcaresystem">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,26 +15,42 @@
         android:theme="@style/Theme.HealthCareSystem"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Nutritionist"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".NutritionistRegistration"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true" />
+        <activity
             android:name=".PrescribeMedicineActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" />
         <activity
             android:name=".Patient"
             android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:windowSoftInputMode="stateAlwaysVisible" />
         <activity
             android:name=".PatientRegistration"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" />
         <activity
             android:name=".Doctor"
-            android:exported="true" />
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true"
+            />
         <activity
             android:name=".Login"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" />
         <activity
             android:name=".DoctorRegistration"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

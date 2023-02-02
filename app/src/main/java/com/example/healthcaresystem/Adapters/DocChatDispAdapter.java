@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.healthcaresystem.DBHelper;
 import com.example.healthcaresystem.Fragments.PatDocChatFragment;
+import com.example.healthcaresystem.Fragments.PatientReportViewFragment;
 import com.example.healthcaresystem.Models.PatChatDispModel;
 import com.example.healthcaresystem.R;
 
@@ -22,11 +23,13 @@ public class DocChatDispAdapter  extends RecyclerView.Adapter<DocChatDispAdapter
     private Context context;
     private List<PatChatDispModel> data;
     private String id;
-    private int work_id;
+    private int work_id, type;
     private FragmentManager fragmentManager;
+    private boolean check;
 
 
-    public DocChatDispAdapter(Context context, List<PatChatDispModel> data, FragmentManager fragmentManager) {
+    public DocChatDispAdapter(Context context, List<PatChatDispModel> data,
+                              FragmentManager fragmentManager, boolean check) {
         this.context = context;
         this.data = data;
         this.fragmentManager=fragmentManager;
@@ -34,6 +37,8 @@ public class DocChatDispAdapter  extends RecyclerView.Adapter<DocChatDispAdapter
         Cursor cursor = db.getData();
         cursor.moveToNext();
         id = cursor.getString(0);
+        type = cursor.getInt(2);
+        this.check=check;
         setHasStableIds(true);
     }
 
@@ -83,8 +88,32 @@ public class DocChatDispAdapter  extends RecyclerView.Adapter<DocChatDispAdapter
         public void onClick(View v) {
             int position = this.getAdapterPosition();
             PatChatDispModel x = data.get(position);
-            fragmentManager.beginTransaction().replace(R.id.docFragment, new
-                    PatDocChatFragment(x.getUsername(), x.getName()), "chat").addToBackStack("chat").commit();
+            if (check){
+                if (type==1){
+                    fragmentManager.beginTransaction().replace(R.id.docFragment, new
+                            PatDocChatFragment(x.getUsername(), x.getName()), "chat").
+                            addToBackStack("chat").commit();
+                }
+                else if (type==3){
+                    fragmentManager.beginTransaction().replace(R.id.nutritionistFragment, new
+                            PatDocChatFragment(x.getUsername(), x.getName()), "chat").
+                            addToBackStack("chat").commit();
+                }
+            }
+            else{
+                if (type==1){
+                    fragmentManager.beginTransaction().replace(R.id.docFragment, new
+                            PatientReportViewFragment(x.getUsername()), "patientReportView").
+                            addToBackStack("chat").commit();
+                }
+                else if (type==3){
+                    fragmentManager.beginTransaction().replace(R.id.nutritionistFragment, new
+                            PatientReportViewFragment(x.getUsername()), "patientReportView").
+                            addToBackStack("chat").commit();
+                }
+            }
+
+
         }
     }
 }

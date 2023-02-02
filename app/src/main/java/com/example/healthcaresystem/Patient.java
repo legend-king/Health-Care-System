@@ -18,9 +18,14 @@ import com.example.healthcaresystem.Fragments.PatientChatDisplayFragment;
 import com.example.healthcaresystem.Fragments.PatientPhysicalActivityFragment;
 import com.example.healthcaresystem.Fragments.PatientPrescribedMedicineFragment;
 import com.example.healthcaresystem.Fragments.PatientProfileFragment;
+import com.example.healthcaresystem.Fragments.PatientReportUploadFragment;
+import com.example.healthcaresystem.Fragments.PatientReportViewFragment;
 import com.example.healthcaresystem.Fragments.PatientSearchDocFragment;
+import com.example.healthcaresystem.Fragments.PatientSearchNutritionistFragment;
 import com.example.healthcaresystem.databinding.ActivityPatientBinding;
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.File;
 
 public class Patient extends AppCompatActivity {
     ActivityPatientBinding binding;
@@ -33,6 +38,15 @@ public class Patient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityPatientBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        File myDir = new File(getCacheDir(), "folder");
+        myDir.mkdir();
+
+        File[] files = myDir.listFiles();
+        if(files!=null) {
+            for(File f: files) {
+                f.delete();
+            }
+        }
 
         try {
 
@@ -82,6 +96,18 @@ public class Patient extends AppCompatActivity {
                     case R.id.patPrescribedMedicine:
                         fragment = new PatientPrescribedMedicineFragment();
                         tag = "prescribedMedicine";
+                        break;
+                    case R.id.patSearchNutri:
+                        fragment = new PatientSearchNutritionistFragment();
+                        tag="nutritionistSearch";
+                        break;
+                    case R.id.patReportUpload:
+                        fragment = new PatientReportUploadFragment();
+                        tag="reportUpload";
+                        break;
+                    case R.id.patReportView:
+                        fragment = new PatientReportViewFragment();
+                        tag="reportView";
                         break;
                     case R.id.patSearch:
                         fragment = new PatientSearchDocFragment();

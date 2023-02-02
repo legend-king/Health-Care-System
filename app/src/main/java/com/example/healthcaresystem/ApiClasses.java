@@ -141,11 +141,11 @@ public class ApiClasses {
         BufferedReader reader = null;
         String resultJson = "";
         String user, password, name, mobile, email;
-        int specialist;
+        int specialist, consultationCharge;
         char gender;
 
         DoctorRegisterPost(String name, String mobile, String email, char gender, String user,
-                           String password, int specialist){
+                           String password, int specialist, int consultationCharge){
             this.user=user;
             this.password=password;
             this.name=name;
@@ -153,6 +153,7 @@ public class ApiClasses {
             this.email=email;
             this.gender=gender;
             this.specialist=specialist;
+            this.consultationCharge = consultationCharge;
         }
 
         @Override
@@ -171,7 +172,7 @@ public class ApiClasses {
                 DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
                 wr.writeBytes("userName=" + user + "&password=" + password + "&name="+name
                         + "&gender="+gender+ "&email="+email+"&mobile="+mobile+
-                        "&specialist="+specialist);
+                        "&specialist="+specialist+ "&consultationCharge="+consultationCharge);
                 wr.flush();
                 wr.close();
 

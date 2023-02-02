@@ -12,37 +12,30 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.healthcaresystem.Adapters.DocChatDispAdapter;
-import com.example.healthcaresystem.Adapters.PatChatDispAdapter;
 import com.example.healthcaresystem.ApiClasses;
 import com.example.healthcaresystem.DBHelper;
 import com.example.healthcaresystem.Models.PatChatDispModel;
 import com.example.healthcaresystem.R;
 import com.example.healthcaresystem.databinding.FragmentDoctorChatBinding;
+import com.example.healthcaresystem.databinding.FragmentNutritionistChatDisplayBinding;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
-public class DoctorChatDisplayFragment extends Fragment {
-
-    private FragmentDoctorChatBinding binding;
+public class NutritionistChatDisplayFragment extends Fragment {
+    FragmentNutritionistChatDisplayBinding binding;
     private DocChatDispAdapter recyclerViewAdapter;
     private ArrayList<PatChatDispModel> workArrayList;
     DBHelper db;
     String sender;
-    boolean check;
-
-    public DoctorChatDisplayFragment(boolean check){
-        this.check=check;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentDoctorChatBinding.inflate(inflater, container, false);
+        binding = FragmentNutritionistChatDisplayBinding.inflate(inflater, container,
+                false);
         db = new DBHelper(getActivity());
         Cursor cursor = db.getData();
         cursor.moveToNext();
@@ -73,7 +66,7 @@ public class DoctorChatDisplayFragment extends Fragment {
             }
 
             recyclerViewAdapter = new DocChatDispAdapter(getActivity(),
-                    workArrayList, getParentFragmentManager(), check);
+                    workArrayList, getParentFragmentManager(), true);
             binding.recyclerView.setAdapter(recyclerViewAdapter);
         }catch (Exception e){
             Log.e("error", e.toString());

@@ -17,25 +17,22 @@ import android.widget.TextView;
 import com.example.healthcaresystem.Fragments.DoctorChatDisplayFragment;
 import com.example.healthcaresystem.Fragments.DoctorPrescribedMedicineFragment;
 import com.example.healthcaresystem.Fragments.DoctorProfileFragment;
-import com.example.healthcaresystem.databinding.ActivityDoctorBinding;
+import com.example.healthcaresystem.Fragments.NutritionistChatDisplayFragment;
+import com.example.healthcaresystem.Fragments.NutritionistProfileFragment;
+import com.example.healthcaresystem.databinding.ActivityNutritionistBinding;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.Stack;
-
-public class Doctor extends AppCompatActivity {
-
-    ActivityDoctorBinding binding;
+public class Nutritionist extends AppCompatActivity {
+    ActivityNutritionistBinding binding;
     String id;
-    TextView textView;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     FragmentManager fragmentManager;
     DBHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityDoctorBinding.inflate(getLayoutInflater());
+        binding = ActivityNutritionistBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 
         try {
 
@@ -47,7 +44,6 @@ public class Doctor extends AppCompatActivity {
 
             id = cursor.getString(0);
 
-            textView = findViewById(R.id.docWelcome);
 
             fragmentManager = getSupportFragmentManager();
 
@@ -60,13 +56,12 @@ public class Doctor extends AppCompatActivity {
             actionBarDrawerToggle.syncState();
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-            Fragment fragment = new DoctorProfileFragment();
-            fragmentManager.beginTransaction().replace(binding.docFragment.getId(),
+            Fragment fragment = new NutritionistProfileFragment(id);
+            fragmentManager.beginTransaction().replace(binding.nutritionistFragment.getId(),
                     fragment, "profile").commit();
         }catch(Exception e){
             Log.e("error", e.toString());
         }
-
 
         binding.nav.setNavigationItemSelectedListener(new NavigationView.
                 OnNavigationItemSelectedListener() {
@@ -76,35 +71,31 @@ public class Doctor extends AppCompatActivity {
                 String tag = null;
                 boolean flag=false;
                 switch (item.getItemId()){
-                    case R.id.docLogout:
+                    case R.id.nutriLogout:
                         db.deleteData();
-                        Intent intent = new Intent(Doctor.this, MainActivity.class);
+                        Intent intent = new Intent(Nutritionist.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                         break;
-                    case R.id.docChats:
-                        fragment = new DoctorChatDisplayFragment(true);
+                    case R.id.nutriChats:
+                        fragment = new NutritionistChatDisplayFragment();
                         tag = "chatDisplay";
                         break;
-                    case R.id.docPrescribedMedicine:
-                        fragment = new DoctorPrescribedMedicineFragment();
-                        tag = "prescribedMedicine";
-                        break;
-                    case R.id.docPatientReports:
-                        fragment = new DoctorChatDisplayFragment(false);
-                        tag = "patientReport";
-                        break;
+//                    case R.id.docPrescribedMedicine:
+//                        fragment = new DoctorPrescribedMedicineFragment();
+//                        tag = "prescribedMedicine";
+//                        break;
                     default:
-                        fragment = new DoctorProfileFragment();
+                        fragment = new NutritionistProfileFragment(id);
                         tag = "profile";
                 }
                 if (fragment!=null){
                     if (flag){
-                        fragmentManager.beginTransaction().replace(binding.docFragment.getId(),
+                        fragmentManager.beginTransaction().replace(binding.nutritionistFragment.getId(),
                                 fragment, tag).commit();
                     }
                     else{
-                        fragmentManager.beginTransaction().replace(binding.docFragment.getId(),
+                        fragmentManager.beginTransaction().replace(binding.nutritionistFragment.getId(),
                                 fragment, tag).addToBackStack(tag).commit();
                     }
 

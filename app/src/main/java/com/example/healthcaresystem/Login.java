@@ -54,6 +54,17 @@ public class Login extends AppCompatActivity {
                             Intent intent1 = new Intent(Login.this, Doctor.class);
                             startActivity(intent1);
                         }
+                        else if (type==2){
+
+                        }
+                        else if (type==3){
+                            db.deleteData();
+                            db.insertData(userName, password, type,
+                                    jsonObject.getString("mobile"),
+                                    jsonObject.getString("email"));
+                            Intent intent1 = new Intent(Login.this, Nutritionist.class);
+                            startActivity(intent1);
+                        }
                     }
                     else{
                         binding.userET.setError("Invalid Credentials");
@@ -75,6 +86,14 @@ public class Login extends AppCompatActivity {
                 }
                 else if (type==1){
                     Intent intent = new Intent(Login.this, DoctorRegistration.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else if (type==2){
+
+                }
+                else if (type==3){
+                    Intent intent = new Intent(Login.this, NutritionistRegistration.class);
                     startActivity(intent);
                     finish();
                 }

@@ -4,27 +4,17 @@
     tools:ignore="HardcodedText">
 
     <item
-        android:id="@+id/docProfile"
+        android:id="@+id/nutriProfile"
         android:icon="@drawable/profile"
         android:title="Profile" />
 
     <item
-        android:id="@+id/docChats"
+        android:id="@+id/nutriChats"
         android:icon="@drawable/chat"
         android:title="Chats" />
 
     <item
-        android:id="@+id/docPrescribedMedicine"
-        android:icon="@drawable/ic_baseline_medication_liquid_24"
-        android:title="Prescribed Medicines" />
-
-    <item
-        android:id="@+id/docPatientReports"
-        android:icon="@drawable/ic_baseline_preview_24"
-        android:title="Patient Reports" />
-
-    <item
-        android:id="@+id/docLogout"
+        android:id="@+id/nutriLogout"
         android:icon="@drawable/logout"
         android:title="Logout" />
 

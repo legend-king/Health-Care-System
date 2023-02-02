@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Health Care System</string>
     <string name="url">http://192.168.1.30:8000/api/</string>
-<!--    <string name="url">http://172.16.9.232:8000/api/</string>-->
+    <string name="downloadurl">http://192.168.1.30:8000/</string>
+    <!--    <string name="url">http://172.16.9.232:8000/api/</string>-->
     <string name="doctor">Doctor</string>
     <string name="patient">Patient</string>
     <string name="driver">Driver</string>
@@ -43,6 +44,17 @@
     <string name="addMedicine">Add Medicine</string>
     <string name="amount">Amount</string>
     <string name="viewDetails">View Details</string>
+    <string name="orderNow">Order Now</string>
+    <string name="patientRegistration">Patient Registration</string>
+    <string name="doctorRegistration">Doctor Registration</string>
+    <string name="driverRegistration">Driver Registration</string>
+    <string name="nutritionistRegistration">Nutritionist Registration</string>
+    <string name="consultationCharge">Consultation Charge</string>
+    <string name="upload">Upload</string>
+    <string name="nofile">No File Selected</string>
+    <string name="uploadReport">Upload Report</string>
+    <string name="reportName">Report Name</string>
+    <string name="remark">Remark (Optional)</string>
 
 
     <string name="nav_open">Open</string>

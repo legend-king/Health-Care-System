@@ -75,8 +75,10 @@ public class PatientSearchDocFragment extends Fragment {
                         JSONArray jsonArray = patientSearchDoctorGet.getData();
                         for (int j = 0; j < jsonArray.length(); j++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(j);
-                            workArrayList.add(new SearchDoctorModel(jsonObject.getString("username"),
-                                    jsonObject.getString("name")));
+                            workArrayList.add(new SearchDoctorModel(
+                                    jsonObject.getString("username"),
+                                    jsonObject.getString("name"),
+                                    jsonObject.getInt("consultation_charge")));
                         }
                     } catch (Exception e) {
                         Log.e("error", e.toString());

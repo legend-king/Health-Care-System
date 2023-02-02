@@ -14,9 +14,23 @@
         android:title="Search Doctor" />
 
     <item
+        android:id="@+id/patSearchNutri"
+        android:icon="@drawable/search"
+        android:title="Search Nutritionist" />
+
+    <item
         android:id="@+id/patChats"
         android:icon="@drawable/chat"
         android:title="Chats" />
+    <item
+        android:id="@+id/patReportUpload"
+        android:icon="@drawable/ic_baseline_file_upload_24"
+        android:title="Report Upload" />
+
+    <item
+        android:id="@+id/patReportView"
+        android:icon="@drawable/ic_baseline_preview_24"
+        android:title="View Report" />
 
     <item
         android:id="@+id/patPrescribedMedicine"

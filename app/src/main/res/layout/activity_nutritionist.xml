@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/my_drawer_layout"
+    tools:context=".Nutritionist"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nutritionistFragment"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+
+
+    <com.rom4ek.arcnavigationview.ArcNavigationView
+        android:id="@+id/nav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        app:itemBackground="@android:color/white"
+        app:headerLayout="@layout/nutritionist_nav_header"
+        app:menu="@menu/nutritionist_navigation_menu"
+
+        app:arc_cropDirection="cropOutside"
+
+        app:arc_width="96dp"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

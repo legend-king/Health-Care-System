@@ -77,6 +77,18 @@
                 android:layout_gravity="center"/>
 
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/rcDocPresOrderNow"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/datebg"
+                android:backgroundTint="@color/blue"
+                android:text="@string/orderNow"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"/>
+
+
 
 
         </LinearLayout>

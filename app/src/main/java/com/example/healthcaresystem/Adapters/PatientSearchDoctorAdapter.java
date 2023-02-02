@@ -52,6 +52,7 @@ public class PatientSearchDoctorAdapter extends RecyclerView.Adapter<PatientSear
     public void onBindViewHolder(@NonNull PatientSearchDoctorAdapter.ViewHolder holder, int position) {
         SearchDoctorModel x = data.get(position);
         holder.name.setText(x.getName());
+        holder.consultationCharge.setText("Consultation Charge : "+x.getConsultationCharge()+" Rs");
         holder.docImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +70,7 @@ public class PatientSearchDoctorAdapter extends RecyclerView.Adapter<PatientSear
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        public TextView name;
+        public TextView name, consultationCharge;
         public ImageView docImage;
 
         public ViewHolder(@NonNull View itemView) {
@@ -79,6 +80,7 @@ public class PatientSearchDoctorAdapter extends RecyclerView.Adapter<PatientSear
 
             name = itemView.findViewById(R.id.rcPatSearchDoctorName);
             docImage = itemView.findViewById(R.id.rcPatDocProfile);
+            consultationCharge = itemView.findViewById(R.id.rcPatSearchDoctorConsultationCharge);
         }
 
         @Override

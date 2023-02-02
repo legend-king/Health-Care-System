@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         binding.nutritionistCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                intent.putExtra("type", 3);
+                startActivity(intent);
             }
         });
     }

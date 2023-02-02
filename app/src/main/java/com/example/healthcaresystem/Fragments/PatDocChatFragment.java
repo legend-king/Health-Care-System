@@ -63,7 +63,7 @@ public class PatDocChatFragment extends Fragment {
         type = cursor.getInt(2);
         binding.receiver.setText(receiverName);
 
-        if (type==0){
+        if (type==0 || type==3 || type==2){
             binding.precribeMedicine.setVisibility(View.GONE);
         }
 
@@ -86,7 +86,11 @@ public class PatDocChatFragment extends Fragment {
                 }
                 else if (type==1){
                     getParentFragmentManager().beginTransaction().replace(R.id.docFragment,
-                            new DoctorChatDisplayFragment()).commit();
+                            new DoctorChatDisplayFragment(true)).commit();
+                }
+                else if (type==3){
+                    getParentFragmentManager().beginTransaction().replace(R.id.nutritionistFragment,
+                            new DoctorChatDisplayFragment(true)).commit();
                 }
             }
         });
@@ -94,41 +98,43 @@ public class PatDocChatFragment extends Fragment {
         binding.send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = binding.message.getText().toString();
-                try{
-                    ApiClasses.PatDocChatPost patDocChatPost = new ApiClasses.PatDocChatPost(sender,
-                            receiver, message);
-                    patDocChatPost.execute();
-                    binding.message.setText("");
-                    binding.recyclerView.setHasFixedSize(true);
-                    binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                    workArrayList = new ArrayList<>();
+                String message = binding.message.getText().toString().trim();
+                if (message.length() > 0) {
                     try {
-                        ApiClasses.PatDocChatGet patDocChatGet = new ApiClasses.PatDocChatGet(sender, receiver);
-                        patDocChatGet.execute().get();
-                        JSONArray jsonArray = patDocChatGet.getData();
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            workArrayList.add(new ChatModel(jsonObject.getString("sender"),
-                                    jsonObject.getString("receiver"), jsonObject.getString("message")));
+                        ApiClasses.PatDocChatPost patDocChatPost = new ApiClasses.PatDocChatPost(sender,
+                                receiver, message);
+                        patDocChatPost.execute();
+                        binding.message.setText("");
+                        binding.recyclerView.setHasFixedSize(true);
+                        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                        workArrayList = new ArrayList<>();
+                        try {
+                            ApiClasses.PatDocChatGet patDocChatGet = new ApiClasses.PatDocChatGet(sender, receiver);
+                            patDocChatGet.execute().get();
+                            JSONArray jsonArray = patDocChatGet.getData();
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                workArrayList.add(new ChatModel(jsonObject.getString("sender"),
+                                        jsonObject.getString("receiver"), jsonObject.getString("message")));
+                            }
+                        } catch (Exception e) {
+                            Log.e("error", e.toString());
                         }
-                    } catch (Exception e) {
-                        Log.e("error", e.toString());
-                    }
 
-                    recyclerViewAdapter = new PatDocChatAdapter(getActivity(),
-                            workArrayList);
-                    binding.recyclerView.setAdapter(recyclerViewAdapter);
-                    binding.recyclerView.scrollToPosition(workArrayList.size() - 1);
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
+                        recyclerViewAdapter = new PatDocChatAdapter(getActivity(),
+                                workArrayList);
+                        binding.recyclerView.setAdapter(recyclerViewAdapter);
+                        binding.recyclerView.scrollToPosition(workArrayList.size() - 1);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     try {
-                        InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                }
             }
         });
         return binding.getRoot();

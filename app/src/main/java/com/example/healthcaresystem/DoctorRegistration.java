@@ -70,6 +70,7 @@ public class DoctorRegistration extends AppCompatActivity {
                 String confirmPassword = binding.confirmPasswordET.getText().toString().trim();
                 String userName = binding.userET.getText().toString().trim();
                 String specialist = binding.specialistDropDown.getText().toString();
+                String consultationCharge = binding.consultationChargeET.getText().toString();
 
                 if (specialist.equals("Select")) {
                     Toast.makeText(getApplicationContext(), "Should select a specialist area",
@@ -130,10 +131,15 @@ public class DoctorRegistration extends AppCompatActivity {
                         proceed = false;
                         binding.confirmPasswordET.setError("Password Mismatch");
                     }
+                    else if (consultationCharge.length()==0){
+                        proceed = false;
+                        binding.consultationChargeET.setError("Consultation Charge Cannot be empty");
+                    }
                     if (proceed){
                         ApiClasses.DoctorRegisterPost doctorRegisterPost = new ApiClasses.
                                 DoctorRegisterPost(name, mobile,
-                                email,gender, userName, password, specailistId);
+                                email,gender, userName, password, specailistId,
+                                Integer.parseInt(consultationCharge));
                         try{
                             doctorRegisterPost.execute().get();
                             JSONObject jsonObject = doctorRegisterPost.getData();
